@@ -126,9 +126,14 @@ function handleCanvasClick(e) {
     
     coordinates = getCanvasPointerCoordinates(e);
     handleDrawingMode(coordinates[0], coordinates[1]);
-}
+};
 
-
+function resetDrawingPoints(){
+    lineStartPoint = null; 
+    lastLinkedLinePoint = null;
+    curveLinePoints = [];
+    linkedCurvePoints = [];
+};
 
 /// PAGE SET UP ///
 window.onload = function() {
@@ -202,10 +207,7 @@ submenuToggle.addEventListener('click', function () {
 
 clearButton.addEventListener('click', function() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    lineStartPoint = null; 
-    lastLinkedLinePoint = null;
-    curveLinePoints = [];
-    linkedCurvePoints = [];
+    resetDrawingPoints();
 });
 
 drawingModeButtonsContainer.addEventListener('click', function(e) {
@@ -230,13 +232,10 @@ drawingModeButtonsContainer.addEventListener('click', function(e) {
             drawingMode = 'linkedCurve';
         }
 
-        lineStartPoint = null; 
-        lastLinkedLinePoint = null;
-        curveLinePoints = [];
-        linkedCurvePoints = [];
-
         ctx.fillStyle = ctx.strokeStyle; // Make sure fillStyle matches strokeStyle for dots
         ctx.lineWidth = currentSize; // Set line width for lines and dot radius
+        resetDrawingPoints();
+
     }
 });
 
@@ -253,6 +252,7 @@ colorSwatchesContainer.addEventListener('click', function(e) {
         var dataColor = target.getAttribute('data-color');
         ctx.fillStyle = dataColor;
         ctx.strokeStyle = dataColor; // Also set stroke style for lines
+        resetDrawingPoints();
     }
 });
 
@@ -261,6 +261,7 @@ decreaseButton.addEventListener('click', function() { // size control
         currentSize--;
         sizeValueSpan.innerHTML = currentSize;
         ctx.lineWidth = currentSize; // Update line width
+        resetDrawingPoints();
     }
 });
 
@@ -269,5 +270,6 @@ increaseButton.addEventListener('click', function() { // size control
         currentSize++;
         sizeValueSpan.innerHTML = currentSize;
         ctx.lineWidth = currentSize; // Update line width
+        resetDrawingPoints();
     }
 });
