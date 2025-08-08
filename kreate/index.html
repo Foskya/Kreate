@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kreate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="controls">
+            <span id="title">KREATE</span>
+            <button id="submenuToggle">OPEN</button>
+            <div id="submenu" style="display: none;">
+                <button id="clearButton" class="control-button clear-button">Clear</button>
+                <span class="divider">|</span>
+                <button id="decreaseSize"   class="size-button">-</button>
+                <span id="sizeValue">5px</span>
+                <button id="increaseSize"   class="size-button">+</button>
+                <div id="drawingModeButtons" class="drawing-mode-buttons-container">
+                    <button id="dotButton"          class="control-button drawing-mode-button selected">Dot</button>
+                    <button id="lineButton"         class="control-button drawing-mode-button">Line</button>
+                    <button id="linkedLinesButton"  class="control-button drawing-mode-button">Linked Line</button>
+                    <button id="curveButton"        class="control-button drawing-mode-button">Curve</button>
+                    <button id="linkedCurveButton"  class="control-button drawing-mode-button">Linked Curve</button>
+                </div>
+                <div id="colorSwatches" class="color-swatches-container">
+                    <div class="color-swatch" style="background-color: #000000;" data-color="#000000"></div>
+                    <div class="color-swatch" style="background-color: #404040;" data-color="#404040"></div>
+                    <div class="color-swatch" style="background-color: #808080;" data-color="#808080"></div>
+                    <div class="color-swatch" style="background-color: #C0C0C0;" data-color="#C0C0C0"></div>
+                    <div class="color-swatch" style="background-color: #FFFFFF;" data-color="#FFFFFF"></div>
+                </div>
+            </div> 
+
+        </div>
+        <canvas id="drawingCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
