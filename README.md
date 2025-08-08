@@ -28,7 +28,7 @@ I’ve programmed it in a way that it should adapt to any screen, regardless of 
 * `Geometric Shapes` mode (circles, rectangles, triangles, etc)
 * `Fill Color` mode
 * dot size indicator
-* Back Button
+* `Back` Button
 * Better UI (use more images instead of words)
 * Improve top bar (making it show the current mode and color)
 
