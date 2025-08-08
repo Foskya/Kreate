@@ -21,7 +21,7 @@ I’ve programmed it in a way that it should adapt to any screen, regardless of 
 3.  That's it. Now you can run it from the homepage.
 
 ## Future Implementations
-
+* Add an icon
 * Generally improve usability and make it less clumsy
 * Button to download your *horro* ahem ahem **masterpieces**
 * Generator of the drawing's QR code
